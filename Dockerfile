@@ -1,5 +1,2 @@
-FROM ubuntu:latest
-RUN apt-get update
-RUN apt-get -y upgrade
-RUN apt-get -y install python
+FROM python:3.8.0a1-slim-stretch
 RUN echo "Hello from py in container"
