@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+
+import pandas as pd
+import numpy as np
+from tqdm import tqdm
+
+df= pd.read_csv("../data/testMultiDF.csv")
+df['Month'] = pd.to_datetime(df['Month'])
+
+print("*********BY ID******************")
+dfI=df.set_index(['ID','Month'])
+dfI.sort_index(inplace=True)
+print(dfI)
+print("**********BY MONTH*****************")
+dfM=df.set_index(['Month','ID'])
+dfM.sort_index(inplace=True)
+print(dfM)
+
+print("*************************************")
+
+
+ID,Month,Name,Title,Supervisor
+f1,March2019,Employee1,Title1,Supervisor1
+f2,March2019,Employee2,Title2,Supervisor2
+f3,March2019,Employee3,Title3,Supervisor3
+f1,April2019,Employee1,Title1,Supervisor1
+f2,April2019,Employee2,Title2,Supervisor2
+f3,April2019,Employee3,Title3,Supervisor3
+f1,May2019,Employee1,Title1,Supervisor1
+f2,May2019,Employee2,Title2,Supervisor2
+f1,June2019,Employee1,Title1,Supervisor1
+
